@@ -9,12 +9,11 @@ import { RepositorySearchService } from '../repository-search.service';
 })
 export class SearchComponent implements OnInit {
   searchResults: Repository;
-  
 
   constructor(private RepositorySearchService: RepositorySearchService) { }
 
   ngOnInit(): void {
-    this.RepositorySearchService.gitSearch('tensorflow').then( (response) => {
+    this.RepositorySearchService.gitSearch('python').then( (response) => {
       this.searchResults = response;
     }, (error) => {
       alert("Error: " + error.statusText);
